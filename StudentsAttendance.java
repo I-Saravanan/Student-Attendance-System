@@ -8,7 +8,7 @@ class StudentsAttendance {
         Scanner sc = new Scanner(System.in);
         HashMap<Integer,String> studentlist = new HashMap<Integer,String>();
         HashSet<Integer> presentlist = new HashSet<>();
-
+        
         studentlist.put(101, "Akash");
         studentlist.put(102, "Ajay");
         studentlist.put(103, "Bhavana");
@@ -16,13 +16,13 @@ class StudentsAttendance {
         studentlist.put(105, "Sahira");
         studentlist.put(106,"Sara");
         studentlist.put(107, "Zaara");
-
+        
         presentlist.add(101);
         presentlist.add(103);
         presentlist.add(104);
         presentlist.add(105);
         presentlist.add(102);
-
+        
         while(true){
             System.out.println("\n---Attendance Menu---");
             System.out.println("1.Mark Attendance");
@@ -34,7 +34,7 @@ class StudentsAttendance {
 
             System.out.println("Enter your choice:" );
             int choice = sc.nextInt();
-
+            
             switch(choice){
                 case 1:
                     System.out.println("Enter the Roll no");
@@ -102,3 +102,4 @@ class StudentsAttendance {
         }
     }
 }
+
