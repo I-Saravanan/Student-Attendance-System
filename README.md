@@ -1,90 +1,101 @@
-📘 Student Attendance Management System (Java) ![version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
+![version](https://img.shields.io/badge/version-v2.0.0-blue.svg)
+# Student Attendance System
 
+A **console-based Student Management System** built using **Java and MySQL (JDBC)**.  
+This project evolved step by step from in-memory storage to a **fully database-backed system**, demonstrating real backend development concepts.
 
-A simple, clean, and scalable Java-based attendance system built using HashMap, HashSet, TreeSet, Scanner, and Switch-case.
-This project serves as a foundational version that can be expanded into a full-stack application in the future.
+---
 
-🚀 Features
+## 🚀 Features
 
-✔ Mark student attendance
+### 👨‍🎓 Student Management
+- Add student
+- View all students
+- Update student details
+- Delete student
 
-✔ Check if a student is present/absent
+### 📝 Attendance Management
+- Mark attendance for multiple students at once
+- Date-wise attendance tracking
+- View attendance history
+- View absent list by date
+- Attendance percentage calculation
 
-✔ View sorted list of present students
+### 📊 Marks Management
+- Add or update marks
+- View individual student marks
+- View all students’ marks
 
-✔ View absent students
+---
 
-✔ Total student count, present count, absent count
+## 🛠️ Technologies Used
 
-✔ Input validation (invalid roll numbers)
+- **Java** (Core Java, JDBC)
+- **MySQL** (Relational Database)
+- **Git & GitHub** (Version Control)
+- **VS Code** (Development Environment)
 
-✔ Prevention of duplicate attendance marking
+---
 
-✔ Clean, menu-driven console interface
+## 🗄️ Database Design
 
+### `studentlist`
+| Column | Type |
+|------|------|
+| roll | INT (Primary Key) |
+| name | VARCHAR |
 
-🧠 Core Concepts Used
+### `marks`
+| Column | Type |
+|------|------|
+| roll | INT (Primary Key, FK) |
+| mark | INT |
 
-1️⃣ HashMap
+### `attendance`
+| Column | Type |
+|------|------|
+| date | DATE |
+| roll | INT |
+**Primary Key:** `(date, roll)`
 
-Stores student roll numbers and names:
+---
 
-HashMap<Integer, String> studentList
+## ▶️ How to Run the Project
 
-2️⃣ HashSet
-
-Stores unique present roll numbers:
-
-HashSet<Integer> presentList
-
-3️⃣ TreeSet
-Used to display present list in sorted order:
-
-TreeSet<Integer> sorted = new TreeSet<>(presentList);
-
-4️⃣ Scanner & Switch-Case
-
-Used for interactive menu and input handling.
-
-
+### 1️⃣ Clone the Repository
+```
+git clone https://github.com/I-Saravanan/Student-Attendance-System.git
+cd Student-Attendance-System
+```
+2️⃣ Compile
+```
+cd src
+javac -cp ".;../lib/mysql-connector-j-9.5.0.jar" main/StudentsAttendance.java
+```
+3️⃣ Run
+```
+java -cp ".;../lib/mysql-connector-j-9.5.0.jar" main.StudentsAttendance
+```
 📌 Project Structure
-📂 StudentAttendanceSystem
- ├── StudentsAttendance.java
- └── README.md
+Student-Attendance-System/
+│
+├── src/
+│   ├── main/
+│   ├── database/
+│   
+│
+├── lib/
+│   └── mysql-connector-j-9.5.0.jar
+│
+├── README.md
+├── LICENSE
+└── .gitignore
 
-🖥 How to Run
+🔄 Version History
 
-Install Java (JDK 8+ recommended)
+v1.0.0 – Console-based system using HashMap & File handling
 
-Clone this repository:
-
-git clone https://github.com/I-Saravanan/StudentAttendanceSystem.git
-
-
-Navigate to the folder:
-
-cd StudentAttendanceSystem
-
-
-Compile the program:
-
-javac StudentsAttendance.java
-
-
-Run the program:
-
-java StudentsAttendance
-
-📊 Sample Output
----Attendance Menu---
-1. Mark Attendance
-2. Check Attendance
-3. View Present List
-4. View Absent List
-5. View Total Count
-6. Exit
-Enter your choice:
-
+v2.0.0 – MySQL database integration using JDBC
 
 
 🤝 Contributing
@@ -96,5 +107,5 @@ Feel free to submit issues or enhancements.
 
 This project is open-source under the MIT License.
 
-✨ Author
+✨👤 Author 
 Saravanan Iyappan
